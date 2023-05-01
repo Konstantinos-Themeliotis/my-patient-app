@@ -1,0 +1,441 @@
+body {
+    background: #ffffffc4;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+/* Header */
+.page-header{
+    background-color: rgb(0, 137, 222);
+    padding: 25px;
+    margin: auto -16px;
+    padding: 16px 32px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    display: block;
+
+}
+
+header h1{
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
+    display: inline;
+    padding: 0px 10px;
+    vertical-align: middle;
+}
+
+.header-icon{
+    vertical-align: middle;
+    /* width: 4%; */
+    color: rgb(222, 0, 0);
+}
+
+.header-icon:hover{
+  cursor: pointer;
+}
+/* Error 404 Page */
+.not-found-page{
+  width: 900px;
+  height: 400px;
+  margin: auto;
+}
+
+.error_img{
+  position: relative;
+  width: 25%;
+  margin: auto;
+  margin: 100px 450px;
+}
+
+
+/* Index page action panel */
+.action-panel{
+  height: 240px;
+  width: 338px;
+  background-color: rgb(217, 246, 248);
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 4%;
+  padding-top: 50px;
+
+
+
+}
+
+.action-panel button{
+  height: 130%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+}
+
+
+/* Add Patient page */
+.patient-form{
+  height: 700px;
+  width: 394px;
+  margin: auto;
+  margin-top: 10px;
+  
+
+}
+
+.patient-form h3{
+  text-align: center;
+}
+
+.patient-form button{
+  margin-right: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+}
+
+/* View Patients page */
+.table{
+  margin: 10px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.patients-list button{
+  margin: auto 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+}
+
+/* Patient profile */
+.patient-panel{
+  height: 500px;
+  width: 400px;
+  background-color: rgb(255, 234, 208);
+  margin: auto;
+  margin-top: 30px;
+  /* border-radius: 3%; */
+  padding-top: 0px;
+}
+
+
+.panel-header{
+  width: 400px;
+  height: 50px;
+  /* border-radius: 3%; */
+  margin: auto;
+  padding-top: -50px;
+  background-color: rgb(0, 137, 222);
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+.patient-panel table{
+  text-align: left;
+  margin-top: 0;
+}
+
+.patient-page-toolbar{
+  width: 400px;
+  height: 40px;
+  background-color: rgb(30 , 48, 80);
+
+}
+
+.patient-page-toolbar button {
+  margin: 2px 10px;
+  font-size: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+}
+
+
+/* Prescriptions Page */
+
+.prescriptions-page{
+  margin: auto;
+  width: 1400px;
+}
+
+.prescriptions-page button{
+  margin: 10px 0px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+}
+
+
+.prescription-card{
+  width: 280px;
+  height: 340px; 
+  background-color: rgb(255, 234, 208);
+  box-shadow: 0 2px 5px #ccc;
+  display: inline-block;
+  margin-right: 20px;
+  text-align: center;
+  max-height: 340px;
+  max-width: 280px;
+  position: relative;
+  
+}
+.prescription-card-button-panel{
+  background-color: rgb(30 , 48, 80);
+  height: 50px;
+
+}
+
+.prescription-card-button-panel button{
+  margin: 8px 10px;
+  vertical-align: middle;
+}
+
+.prescription-card-data{
+  max-height: 290px;
+  max-width: 280px;
+  position: relative;
+  overflow: auto;
+}
+
+/* Prescription Form */
+.new-prescription-form{
+  height: 700px;
+  width: 450px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.new-prescription-form button{
+  margin-right: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+}
+
+.records-navbar{
+  padding-left: 40%;
+  text-align: center;
+  display: block;
+
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+  padding: 0 0.5em;
+}
+.navbar .navbar-nav .nav-item:not(:last-child) .nav-link {
+    border-right: 2px solid #000000;
+}
+
+
+/* Diagnosis */
+.diagnosis-page{
+  margin: auto;
+  width: 1400px;
+}
+
+.diagnosis-panel{
+  /* margin: auto; */
+  margin-top: 20px;
+  width: 1400px;
+}
+
+
+.diagnosis-page button{
+  margin: 10px 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Diagnosis Card */
+.diagnosis-card{
+  width: 280px;
+  height: 340px; 
+  background-color: rgb(255, 234, 208);
+  box-shadow: 0 2px 5px #ccc;
+  display: inline-block;
+  margin-right: 20px;
+  text-align: center;
+  max-height: 340px;
+  max-width: 280px;
+  position: relative;
+}
+
+
+.diagnosis-panel-header{
+  background-color: rgb(0, 137, 222);
+  height: 40px;
+}
+
+.diagnosis-card-button-panel{
+    background-color: rgb(30 , 48, 80);
+    height: 50px;
+}
+  
+  
+.diagnosis-card-button-panel button{
+  margin: 8px 10px;
+  vertical-align: middle;
+}
+
+.diagnosis-card-data{
+  max-height: 290px;
+  max-width: 280px;
+  position: relative;
+  overflow: auto;
+  display: inline-block;  
+
+}
+
+
+
+
+
+
+
+
+/* New Diagnosis form */
+.new-diagnosis-form{
+  height: 700px;
+  width: 450px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.new-diagnosis-form button{
+  margin-right: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+}
+
+/* family-history */
+.family-history-page{
+  margin: auto;
+  width: 1400px;
+  
+}
+
+.family-history-page button{
+  margin-right: 15px;
+}
+
+.family-history-panel{
+  margin: auto;
+  padding-top: 10px;
+  width: 1400px; 
+}
+
+
+/* Family History Card */
+.family-history-card{
+  width: 280px;
+  height: 340px; 
+  background-color: rgb(255, 234, 208);
+  box-shadow: 0 2px 5px #ccc;
+  display: inline-block;
+  margin-right: 20px;
+  text-align: center;
+  /* padding: 10px; */
+  max-height: 340px;
+  max-width: 280px;
+  position: relative;
+}
+
+
+
+
+.family-history-card-button-panel{
+    background-color: rgb(30 , 48, 80);
+    height: 50px;
+}
+  
+  
+.family-history-card-button-panel button{
+  margin: 8px 10px;
+  vertical-align: middle;
+}
+
+.family-history-card-data{
+  max-height: 290px;
+  max-width: 280px;
+  position: relative;
+  overflow: auto;
+}
+
+/*  */
+
+/* New family History Form */
+.new-family-history-form{
+  height: 700px;
+  width: 450px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.new-family-history-form button{
+  margin-right: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+}
+
+/* Notes */
+.notes-page{
+  margin: auto;
+  width: 1400px;
+}
+
+.notes-page button{
+  margin-right: 15px;
+}
+
+
+.notes-panel{
+  margin: auto;
+  padding-top: 10px;
+  width: 1400px;
+
+}
+
+
+/* Notes card */
+.note-card{
+  width: 280px;
+  height: 340px; 
+  background-color: rgb(255, 234, 208);
+  box-shadow: 0 2px 5px #ccc;
+  display: inline-block;
+  margin-right: 20px;
+  text-align: center;
+  /* padding: 10px; */
+  max-height: 340px;
+  max-width: 280px;
+  position: relative;
+}
+
+
+.note-card-button-panel{
+    background-color: rgb(30 , 48, 80);
+    height: 50px;
+}
+  
+  
+.note-card-button-panel button{
+  margin: 8px 10px;
+  vertical-align: middle;
+}
+
+.note-card-data{
+  max-height: 290px;
+  max-width: 280px;
+  position: relative;
+  overflow: auto;
+}
+
+
+/* New Note Form */
+.new-note-form{
+  height: 700px;
+  width: 450px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.new-note-form button{
+  margin-right: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+}
+
+
+
+
