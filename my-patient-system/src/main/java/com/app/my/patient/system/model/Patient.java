@@ -12,6 +12,7 @@ public class Patient {
     private String firstName;
     private String lastName;
     private String socialSecurityNumber;
+    private String dateOfBirth;
     private String emailId;
     private String telephoneNumber;
     private String homeAddress;

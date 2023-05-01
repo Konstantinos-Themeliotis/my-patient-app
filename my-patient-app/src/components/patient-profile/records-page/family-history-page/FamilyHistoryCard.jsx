@@ -4,27 +4,29 @@ import { useNavigate } from "react-router-dom";
 
 function FamilyHistoryCard(props){
 
+    const [emailAnimation, setEmailAnimation] = useState("")
+    const [deleteAnimation, setDeleteAnimation] = useState("")
     const navigate = useNavigate();
 
     return(
         <div className="family-history-card  rounded rounded-2">
            <div className="family-history-card-button-panel rounded-bottom">
-           <button 
-                    className={"btn btn-light"}
-                    onClick={(event, id) => props.deleteFamilyHistory(event, props.familyHistory.recordId)}
-                    // onMouseEnter={()=>setDeleteAnimation("fa-bounce")}
-                    // onMouseLeave={()=> setDeleteAnimation("")}
-                    >
-                {/* <i className={`fa-solid fa-trash ${deleteAnimation} fa-xs`} style={{color: "#ff0000"}}></i> */}
-            {"  Delete"}</button>
             <button 
                 onClick={() => navigate(`/patient/${props.familyHistory.patientId}/records/familyHistory/edit/${props.familyHistory.recordId}`)} 
                 className={"btn btn-light"}
-                // onMouseEnter={()=>setEmailAnimation("fa-bounce")}
-                // onMouseLeave={()=> setEmailAnimation("")}
+                onMouseEnter={()=>setEmailAnimation("fa-bounce")}
+                onMouseLeave={()=> setEmailAnimation("")}
                 >
-            {/* <i className={`fa-solid fa-file-pen fa-xs ${emailAnimation}`}></i> */}
+            <i className={`fa-solid fa-file-pen fa-xs ${emailAnimation}`}></i>
             {" Edit"}</button>
+           <button 
+                    className={"btn btn-light"}
+                    onClick={(event, id) => props.deleteFamilyHistory(event, props.familyHistory.recordId)}
+                    onMouseEnter={()=>setDeleteAnimation("fa-bounce")}
+                    onMouseLeave={()=> setDeleteAnimation("")}
+                    >
+                <i className={`fa-solid fa-trash ${deleteAnimation} fa-xs`} style={{color: "#ff0000"}}></i>
+            {"  Delete"}</button>
             </div>
            <div className="family-history-card-data">
                 <h5>Title</h5>

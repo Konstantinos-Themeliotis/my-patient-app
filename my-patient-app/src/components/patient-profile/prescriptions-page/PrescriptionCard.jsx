@@ -19,7 +19,7 @@ function PrescriptionCard(props){
                     onMouseLeave={()=> setDeleteAnimation("")}>
                 <i className={`fa-solid fa-trash ${deleteAnimation} fa-xs`} style={{color: "#ff0000"}}></i>
             {"  Delete"}</button>
-            <a href={`mailto:kmthemel@gmail.com?subject=${encodeURIComponent(`Prescription ${props.prescription.prescriptionId}`)}&body=${encodeURIComponent(props.prescription.medication)}`}>
+            <a href={`mailto:kmthemel@gmail.com?subject=${`Prescription ${props.prescription.prescriptionId}`}&body=${props.prescription.medication}`}>
                 <button 
                         className={"btn btn-light email-button"}
                         onMouseEnter={()=>setEmailAnimation("fa-bounce")}

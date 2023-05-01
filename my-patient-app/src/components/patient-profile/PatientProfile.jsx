@@ -49,9 +49,19 @@ function PatientProfile(){
                     <td>{patient.socialSecurityNumber}</td>
                 </tr>
                 <tr>
+                    <th>Date Of Birth</th>
+                    <td>{patient.dateOfBirth}</td>
+                </tr>
+                <tr>
 
                     <th>Email</th>
-                    <td><a className="mail-link" style={{ backgroundColor: "rgb(255, 234, 208)", paddingLeft:"0px" }} href={"mailto:"+patient.emailId}>{patient.emailId}</a></td>
+                    <td>
+                        <a 
+                        className="mail-link" 
+                        style={{ backgroundColor: "rgb(255, 234, 208)", paddingLeft:"0px" }} 
+                        href={"mailto:"+patient.emailId}>{patient.emailId}
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <th>Telephone</th>

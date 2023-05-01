@@ -6,6 +6,8 @@ import PatientService from "../../../services/PatientService";
 
 function EditPatientForm(){
 
+    const [invalid, setInvalid] = useState("")
+    const [invalidMessage, setInvalidMessage] = useState("")
     const navigate = useNavigate();
     const {id}  = useParams();
     const [loading, setLoading] = useState(true)
@@ -14,6 +16,7 @@ function EditPatientForm(){
         firstName: "",
         lastName: "",
         socialSecurityNumber: "",
+        dateOfBirth : "",
         emailId: "",
         telephoneNumber: "",
         homeAddress: ""
@@ -36,6 +39,10 @@ function EditPatientForm(){
             navigate(`/patient/${id}`)
         })
         .catch((error) =>{
+            if(error.response.data === "Duplicate SSN"){
+                setInvalid("is-invalid")
+                setInvalidMessage(<i>{"This social security number already exists!"}</i>)
+            }
             console.log(error)
         })
     }
@@ -65,15 +72,20 @@ function EditPatientForm(){
             <form autoComplete="off" onSubmit={updatePatient}>
                 <div className="mb-3">
                     <label className="form-label">First Name</label>
-                    <input type="text" name="firstName" className ="form-control" onChange={handleChange} value={patient.firstName} required/>
+                    <input type="text" pattern="^[A-Za-z]+$" name="firstName" className ="form-control" onChange={handleChange} value={patient.firstName} required/>
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Last Name</label>
-                    <input type="text" name="lastName"  className="form-control" onChange={handleChange} value={patient.lastName} required/>
+                    <input type="text" pattern="^[A-Za-z]+$"  name="lastName"  className="form-control" onChange={handleChange} value={patient.lastName} required/>
                 </div>
-                <div className="mb-3">
+                <div className="mb-3 ">
                     <label className="form-label">Social Security Number</label>
-                    <input type="text" name="socialSecurityNumber"  className="form-control" onChange={handleChange} value={patient.socialSecurityNumber}required/>
+                    <input type="text" pattern="^[0-9]+$" name="socialSecurityNumber" id="floatingInputInvalid" value={patient.socialSecurityNumber} onChange={handleChange} className={`form-control ${invalid}`} required/>
+                    <label className="form-floating" for="floatingInputInvalid">{invalidMessage}</label>
+                </div>
+                 <div className="mb-3">
+                    <label className="form-label">Date of Birth</label>
+                    <input type="date" name="dateOfBirth" value={patient.dateOfBirth} onChange={handleChange} className="form-control" required/>
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Email address</label>
@@ -81,7 +93,7 @@ function EditPatientForm(){
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Telephone</label>
-                    <input type="text" name="telephoneNumber"  className="form-control" onChange={handleChange} value={patient.telephoneNumber}/>
+                    <input type="text" pattern="[0-9]{10}" name="telephoneNumber"  className="form-control" onChange={handleChange} value={patient.telephoneNumber}/>
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Home address</label>

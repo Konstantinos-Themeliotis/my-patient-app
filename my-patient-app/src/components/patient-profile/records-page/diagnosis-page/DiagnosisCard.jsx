@@ -5,27 +5,30 @@ import { useNavigate } from "react-router-dom";
 function DiagnosisCard(props){
 
     const navigate = useNavigate();
+    const [emailAnimation, setEmailAnimation] = useState("")
+    const [deleteAnimation, setDeleteAnimation] = useState("")
+
 
 
     return(
         <div className="diagnosis-card  border-3 rounded rounded-2">
            <div className="diagnosis-card-button-panel rounded-bottom">
-            <button 
-                    className={"btn btn-light"}
-                    onClick={(event, id) => props.deleteDiagnosis(event, props.diagnosis.recordId)}
-                    // onMouseEnter={()=>setDeleteAnimation("fa-bounce")}
-                    // onMouseLeave={()=> setDeleteAnimation("")}
-                    >
-                {/* <i className={`fa-solid fa-trash ${deleteAnimation} fa-xs`} style={{color: "#ff0000"}}></i> */}
-            {"  Delete"}</button>
             <button
                 onClick={() => navigate(`/patient/${props.diagnosis.patientId}/records/diagnosis/edit/${props.diagnosis.recordId}`)}
                 className={"btn btn-light"}
-                // onMouseEnter={()=>setEmailAnimation("fa-bounce")}
-                // onMouseLeave={()=> setEmailAnimation("")}
+                onMouseEnter={()=>setEmailAnimation("fa-bounce")}
+                onMouseLeave={()=> setEmailAnimation("")}
                 >
-            {/* <i className={`fa-solid fa-file-pen fa-xs ${emailAnimation}`}></i> */}
+            <i className={`fa-solid fa-file-pen fa-xs ${emailAnimation}`}></i>
             {" Edit"}</button>
+            <button 
+                    className={"btn btn-light"}
+                    onClick={(event, id) => props.deleteDiagnosis(event, props.diagnosis.recordId)}
+                    onMouseEnter={()=>setDeleteAnimation("fa-bounce")}
+                    onMouseLeave={()=> setDeleteAnimation("")}
+                    >
+                <i className={`fa-solid fa-trash ${deleteAnimation} fa-xs`} style={{color: "#ff0000"}}></i>
+            {"  Delete"}</button>
             </div>
            <div className="diagnosis-card-data">
                 <h5>Title</h5>

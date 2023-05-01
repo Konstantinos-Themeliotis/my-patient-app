@@ -39,6 +39,7 @@ public class PatientServiceImpl implements PatientService{
                         emp.getFirstName(),
                         emp.getLastName(),
                         emp.getSocialSecurityNumber(),
+                        emp.getDateOfBirth(),
                         emp.getEmailId(),
                         emp.getTelephoneNumber(),
                         emp.getHomeAddress()))
@@ -73,6 +74,7 @@ public class PatientServiceImpl implements PatientService{
         patientEntity.setFirstName(patient.getFirstName());
         patientEntity.setLastName(patient.getLastName());
         patientEntity.setEmailId(patient.getEmailId());
+        patientEntity.setDateOfBirth(patient.getDateOfBirth());
         patientEntity.setSocialSecurityNumber(patient.getSocialSecurityNumber());
         patientEntity.setTelephoneNumber(patient.getTelephoneNumber());
         patientEntity.setHomeAddress(patient.getHomeAddress());

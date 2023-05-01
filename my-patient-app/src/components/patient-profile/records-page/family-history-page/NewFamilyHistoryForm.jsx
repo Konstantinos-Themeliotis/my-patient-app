@@ -51,7 +51,7 @@ function NewFamilyHistoryForm(){
                 </div>
                 <div className="mb-3">
                     <label className="form-label">FullName</label>
-                    <input type="text" name="fullName" className ="form-control" onChange={handleChange} value={familyHistory.fullName} required/>                    
+                    <input type="text"  pattern="^[A-Za-z]+$" name="fullName" className ="form-control" onChange={handleChange} value={familyHistory.fullName} required/>                    
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Relative</label>
@@ -59,7 +59,7 @@ function NewFamilyHistoryForm(){
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Date of Birth</label>
-                    <input type="text" name="dateOfBirth" className ="form-control" onChange={handleChange} value={familyHistory.dateOfBirth} required/>                    
+                    <input type="date" name="dateOfBirth" className ="form-control" onChange={handleChange} value={familyHistory.dateOfBirth} required/>                    
                 </div>
                 <div className="mb-3">
                     <label className="form-label">History</label>

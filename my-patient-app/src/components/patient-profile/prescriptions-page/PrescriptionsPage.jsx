@@ -48,12 +48,19 @@ function PrescriptionsPage(){
     }
     return(
         <div className="prescriptions-page">
-            <button  className="btn btn-light"  
+            <button  className="btn btn-light"
+                style={{marginRight:"10px"}}  
                 onClick={() => navigate(`/patient/${id}/prescriptions/add`)}
                 onMouseEnter={() => setIconAnimation("fa-flip")} 
                 onMouseLeave={() => setIconAnimation("")}> 
             <i className= {`fa-solid fa-plus fa-lg ${iconAnimation}`} style={{color: "#098500"}}></i>
             {"  New Prescription"}</button>
+            <button 
+                className="btn btn-light"
+                onClick={() => navigate(`/patient/${id}`)}>
+                <i class={"fa-solid fa-user fa-sm"}></i> 
+                {"   Profile"} 
+            </button>
             <div className="prescriptions-panel">
                 {prescriptions.map((prescription) =>(
                         <PrescriptionCard prescription = {prescription} deletePrescription = {deletePrescription}/>

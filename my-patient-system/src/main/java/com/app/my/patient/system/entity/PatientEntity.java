@@ -28,6 +28,9 @@ public class PatientEntity {
     @Column( name = "social_security_number", unique = true)
     private String socialSecurityNumber;
 
+    @Column (name = "date_of_birth")
+    private String dateOfBirth;
+
     @Column( name = "email_id")
     private String emailId;
 

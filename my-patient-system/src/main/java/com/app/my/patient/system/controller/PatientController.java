@@ -2,6 +2,7 @@ package com.app.my.patient.system.controller;
 
 import com.app.my.patient.system.model.Patient;
 import com.app.my.patient.system.service.PatientService;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,9 +22,15 @@ public class PatientController {
     }
 
     @PostMapping("/save")
-    public Patient createPatient(@RequestBody Patient patient){
-        return patientService.createPatient(patient);
+    public ResponseEntity<?> createPatient(@RequestBody Patient patient){
+        try{
+            patientService.createPatient(patient);
+            return ResponseEntity.ok(patient);
+        }catch (DataIntegrityViolationException e){
+            return ResponseEntity.badRequest().body("Duplicate SSN");
+        }
     }
+
 
     @GetMapping("/getAll")
     public List<Patient> getAllPatients(){
@@ -47,11 +54,25 @@ public class PatientController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<Patient> updatePatient(@PathVariable Long id,
+    public ResponseEntity<?> updatePatient(@PathVariable Long id,
                                                  @RequestBody Patient patient){
-        patient = patientService.updatePatient(id, patient);
-        return ResponseEntity.ok(patient);
+
+        try{
+            patientService.updatePatient(id, patient);
+            return ResponseEntity.ok(patient);
+        }catch(DataIntegrityViolationException e){
+            return ResponseEntity.badRequest().body("Duplicate SSN");
+        }
 
     }
 
+
+//    public ResponseEntity<?> createPatient(@RequestBody Patient patient){
+//        try{
+//            patientService.createPatient(patient);
+//            return ResponseEntity.ok(patient);
+//        }catch (DataIntegrityViolationException e){
+//            return ResponseEntity.badRequest().body("Duplicate SSN");
+//        }
+//    }
 }

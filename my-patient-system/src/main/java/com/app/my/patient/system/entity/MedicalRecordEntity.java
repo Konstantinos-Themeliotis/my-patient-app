@@ -27,7 +27,7 @@ public abstract class MedicalRecordEntity {
             referencedColumnName = "id"
     )
     private PatientEntity patient;
-
+    
     @Column( name = "title")
     private String title;
 

@@ -106,11 +106,6 @@ public class MedicalRecordController {
 
     @PostMapping("note/save")
     public Note saveNote(@RequestBody Note note){
-        System.out.println(note.getNote());
-        System.out.println(note.getPatientId());
-        System.out.println(note.getTitle());
-        System.out.println(note.getRecordId());
-        System.out.println(note.getDateRecorded());
         return noteService.createNote(note);
 
     }

@@ -75,7 +75,7 @@ function EditFamilyHistoryForm(){
                 </div>
                 <div className="mb-3">
                     <label className="form-label">FullName</label>
-                    <input type="text" name="fullName" className ="form-control" onChange={handleChange} value={familyHistory.fullName} required/>                    
+                    <input type="text"  pattern="^[A-Za-z]+$" name="fullName" className ="form-control" onChange={handleChange} value={familyHistory.fullName} required/>                    
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Relative</label>
